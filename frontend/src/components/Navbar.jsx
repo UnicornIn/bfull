@@ -17,7 +17,7 @@ function Navbar() {
       </div>
       <div className="right">
         <a href="#" className="sign-in">Ingresar</a>
-        <a href="#" className="cta">Empezar gratis</a>
+        <a href="#" className="cta">Activar mi suscripción</a>
       </div>
     </nav>
   );
