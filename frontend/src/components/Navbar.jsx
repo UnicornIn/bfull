@@ -16,8 +16,8 @@ function Navbar() {
         <a href="#">Historias</a>
       </div>
       <div className="right">
-        <a href="#" className="sign-in">Ingresar</a>
-        <a href="#" className="cta">Activar mi suscripción</a>
+        {/* <a href="#" className="sign-in">Ingresar</a> */}
+        <a href="https://wa.me/573023751183" className="cta">Activar mi suscripción</a>
       </div>
     </nav>
   );

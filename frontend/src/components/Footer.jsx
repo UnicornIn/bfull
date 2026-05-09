@@ -38,7 +38,7 @@ function Footer() {
         </div>
       </div>
       <div className="footer-bottom">
-        <span>© 2026 <span className="halo">GlowUp AI</span> · Hecho con ✦ en Medellín, Colombia</span>
+        <span>© 2026 <span className="halo">GlowUp AI</span> · Hecho por Unicornio Industries en Medellín, Colombia</span>
         <span>Términos · Privacidad · Seguridad</span>
       </div>
     </footer>

@@ -20,7 +20,7 @@ function Pricing() {
             <div>WhatsApp de confirmación</div>
             <div>Soporte por chat</div>
           </div>
-          <a href="#" className="cta-plan">Hablar con ventas</a>
+          <a href="https://wa.me/573023751183" className="cta-plan">Hablar con ventas</a>
         </div>
 
         <div className="plan featured">
@@ -39,7 +39,7 @@ function Pricing() {
             <div>Inventario multi-sede</div>
             <div>Soporte prioritario · onboarding 1-a-1</div>
           </div>
-          <a href="#" className="cta-plan">Hablar con ventas</a>
+          <a href="https://wa.me/573023751183" className="cta-plan">Hablar con ventas</a>
         </div>
 
         <div className="plan">
@@ -54,7 +54,7 @@ function Pricing() {
             <div>Gerente de cuenta asignado</div>
             <div>Capacitación por sede</div>
           </div>
-          <a href="#" className="cta-plan">Hablar con ventas</a>
+          <a href="https://wa.me/573023751183" className="cta-plan">Hablar con ventas</a>
         </div>
       </div>
     </section>
