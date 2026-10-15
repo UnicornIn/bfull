@@ -1,5 +1,6 @@
 import { useRef, useState, type FormEvent } from "react";
 import { WHATSAPP_DEFAULT_MSG, WHATSAPP_DISPLAY, whatsappLink } from "../config";
+import { saveLead } from "../lib/leads";
 import { WhatsAppGlyph } from "./Brand";
 
 const TIPOS = ["Salón", "Barbería", "Spa", "Uñas", "Estética", "Centro wellness", "Otro"];
@@ -13,6 +14,7 @@ export function Demo() {
   const [invalid, setInvalid] = useState<keyof Form | null>(null);
   const [sent, setSent] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
+  const trap = useRef<HTMLInputElement>(null);
 
   const set = (k: keyof Form) => (e: { target: { value: string } }) => {
     setForm((f) => ({ ...f, [k]: e.target.value }));
@@ -35,7 +37,17 @@ export function Demo() {
       `Número de sedes: ${form.sedes}`,
       `WhatsApp: ${form.whatsapp.trim()}`,
     ].join("\n");
+    // WhatsApp se abre primero (dentro del clic) para que el navegador no lo bloquee
     window.open(whatsappLink(msg), "_blank", "noopener");
+    saveLead({
+      nombre: form.nombre.trim(),
+      negocio: form.negocio.trim(),
+      tipo: form.tipo,
+      sedes: form.sedes,
+      whatsapp: form.whatsapp.trim(),
+      origen: window.location.href,
+      website: trap.current?.value || undefined,
+    });
     setSent(true);
   };
 
@@ -103,6 +115,15 @@ export function Demo() {
               {...inv("whatsapp")}
             />
           </label>
+          {/* campo trampa para bots: invisible para personas */}
+          <input
+            ref={trap}
+            name="website"
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+            style={{ position: "absolute", left: -9999, width: 1, height: 1, opacity: 0 }}
+          />
           <button className="btn btn-ink" type="submit">
             {sent ? "Abrir WhatsApp de nuevo" : "Agendar mi demo"}
           </button>
